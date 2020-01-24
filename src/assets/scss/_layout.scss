@@ -1,0 +1,25 @@
+@import '../../assets/scss/variable';
+@import '../../assets/scss/mixin';
+
+.g{
+  &--grid{
+    @include flex;
+    @include flex-wrap(wrap);
+    margin: -#{$unit * 2};
+    @include media($tablet-landscape){
+      margin: -#{$unit};
+    }
+
+    &__col{
+      width: calc(50% - #{$unit * 4});
+      margin: #{$unit * 2};
+      @include media($tablet-landscape){
+        margin: $unit;
+        width: calc(50% - #{$unit * 2});
+      }
+      @include media($tablet){
+        width: calc(100% - #{$unit * 2});
+      }
+    }
+  }
+}

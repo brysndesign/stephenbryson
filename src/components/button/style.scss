@@ -1,0 +1,30 @@
+@import '../../assets/scss/mixin';
+@import '../../assets/scss/variable';
+
+.button{
+  $this: '.button';
+  background: $color-black;
+  color: $color-white;
+  padding: #{$unit * 1.5} #{$unit * 2};
+  border-radius: $radius;
+  cursor: pointer;
+  @include inline-flex;
+  @include flex-align-items(center);
+
+  &__icon{
+    margin-left: #{$unit * 2};
+  }
+
+  &--small{
+    padding: #{$unit * .5} $unit;
+
+    #{$this}__icon{
+      margin-left: $unit;
+    }
+  }
+
+  // Variants
+  &--primary{
+    background: $color-primary;
+  }
+}

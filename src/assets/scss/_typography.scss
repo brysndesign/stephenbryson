@@ -1,0 +1,69 @@
+// Imports
+@import '../../assets/scss/variable';
+@import '../../assets/scss/mixin';
+
+// font faces
+@font-face {
+  font-family: $font-family-black;
+  src: url("../fonts/EFCircularWeb-Black.woff2") format("woff2"),
+}
+@font-face {
+  font-family: $font-family-bold;
+  src: url("../fonts/EFCircularWeb-Bold.woff2") format("woff2");
+}
+@font-face {
+  font-family: $font-family-medium;
+  src: url("../fonts/EFCircularWeb-Medium.woff2") format("woff2");
+}
+@font-face {
+  font-family: $font-family-book;
+  src: url("../fonts/EFCircularWeb-Book.woff2") format("woff2");
+}
+
+p, h1, h2, h3, button{
+  line-height: 1.4;
+  margin: #{$unit * 2} 0;
+  max-width: 53rem;
+}
+
+p{
+  font-family: $font-family-book;
+  font-size: 16px;
+  @include media($tablet){
+    font-size: 14px;
+  }
+}
+h1{
+  font-family: $font-family-black;
+  font-size: 38px;
+  @include flex;
+  @include flex-direction(column);
+  @include media($tablet){
+    font-size: 34px;
+  }
+
+  &:after{
+    content: "";
+    padding-bottom: $unit;
+    width: #{$unit * 5};
+    border-bottom: #{$unit * .5} solid $color-black;
+    @include media($tablet){
+      width: #{$unit * 3.5};
+      border-width: #{$unit * .4};
+    }
+  }
+}
+h2{
+  font-family: $font-family-bold;
+  font-size: 28px;
+  @include media($tablet){
+    font-size: 24px;
+  }
+}
+h3{
+  font-family: $font-family-bold;
+  font-size: 24px;
+  @include media($tablet){
+    font-size: 18px;
+  }
+}

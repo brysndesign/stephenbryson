@@ -1,0 +1,11 @@
+@import '../../assets/scss/mixin';
+@import '../../assets/scss/variable';
+
+.section{
+  margin-top: #{$unit * 4};
+  margin-bottom: #{$unit * 4};
+  @include media($tablet){
+    margin-top: #{$unit * 2};
+    margin-bottom: #{$unit * 2};
+  }
+}

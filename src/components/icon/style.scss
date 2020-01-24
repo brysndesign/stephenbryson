@@ -1,0 +1,36 @@
+@import './scss/fontawesome.scss';
+@import './scss/solid.scss';
+@import './scss/regular.scss';
+@import './scss/light.scss';
+@import './scss/brands.scss';
+
+@import '../../assets/scss/variable';
+@import '../../assets/scss/mixin';
+ 
+.fas{
+  @extend .fas;
+}
+.far{
+  @extend .far;
+}
+.fal{
+  @extend .fal;
+}
+.fab{
+  @extend .fab;
+}
+
+.fa-check {
+  @extend %fa-icon;
+
+  &:before {
+    content: fa-content($fa-var-check);
+  }
+}
+
+.icon{
+  font-size: 18px;
+  @include media($tablet){
+    font-size: 16px;
+  }
+}

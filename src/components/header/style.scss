@@ -1,0 +1,16 @@
+@import '../../assets/scss/mixin';
+@import '../../assets/scss/variable';
+
+.header{
+  padding: #{$unit * 2} 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+
+  &__container{
+    @include flex;
+    @include flex-align-items(center);
+    @include flex-justify-content(space-between);
+  }
+}

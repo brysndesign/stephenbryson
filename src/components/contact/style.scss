@@ -1,0 +1,8 @@
+@import '../../assets/scss/mixin';
+@import '../../assets/scss/variable';
+
+.contact{
+  background: $color-black-05;
+  @include flex;
+
+}

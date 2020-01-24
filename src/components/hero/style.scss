@@ -1,0 +1,15 @@
+@import '../../assets/scss/mixin';
+@import '../../assets/scss/variable';
+
+.hero{
+  background: $color-black-05;
+  height: 100vh;
+  min-height: 500px; 
+  max-height: $tablet;
+  @include flex;
+  @include flex-align-items(flex-end);
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: n0-repeat;
+}

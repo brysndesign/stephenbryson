@@ -1,0 +1,44 @@
+@import '../../assets/scss/typography';
+@import '../../assets/scss/variable';
+
+// Margins
+.m{
+  &--none{
+    margin: 0;
+  }
+}
+
+// Font sizes
+.f{
+  &--xxlarge{
+    font-size: 26px;
+    @include media($tablet){
+      font-size: 22px;
+    }
+  }
+  &--xlarge{
+    font-size: 22px;
+    @include media($tablet){
+      font-size: 18px;
+    }
+  }
+  &--large{
+    font-size: 18px;
+    @include media($tablet){
+      font-size: 16px;
+    }
+  }
+}
+
+// Font weights
+.w{
+  &--black{
+    font-family: $font-family-black;
+  }
+  &--bold{
+    font-family: $font-family-bold;
+  }
+  &--medium{
+    font-family: $font-family-medium;
+  }
+}
