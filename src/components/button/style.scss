@@ -27,4 +27,11 @@
   &--primary{
     background: $color-primary;
   }
+  &--link{
+    background: transparent;
+    padding: 0 0 #{$unit * .5} 0;
+    color: $color-primary;
+    border-radius: 0;
+    border-bottom: #{$unit * .2} solid $color-primary;
+  }
 }

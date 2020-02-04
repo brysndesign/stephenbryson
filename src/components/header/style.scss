@@ -7,6 +7,9 @@
   top: 0;
   left: 0;
   width: 100%;
+  @include media($tablet){
+    padding: $unit 0;
+  }
 
   &__container{
     @include flex;

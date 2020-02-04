@@ -1,5 +1,5 @@
 import Home from '../pages/home'
-import HultEdu from '../pages/work/hult-edu'
+import Page from '../pages/page'
 
 const routes = [
   {
@@ -8,9 +8,8 @@ const routes = [
     component: Home
   },
   {
-    path: "/hult-edu",
-    exact: true,
-    component: HultEdu
+    path: "/projects",
+    component: Page
   },
 ];
 

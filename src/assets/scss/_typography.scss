@@ -28,42 +28,43 @@ p, h1, h2, h3, button{
 
 p{
   font-family: $font-family-book;
-  font-size: 16px;
+  font-size: 18px;
   @include media($tablet){
-    font-size: 14px;
+    font-size: 16px;
   }
 }
 h1{
   font-family: $font-family-black;
-  font-size: 38px;
+  font-size: 58px;
   @include flex;
   @include flex-direction(column);
   @include media($tablet){
-    font-size: 34px;
+    font-size: 46px;
   }
-
-  &:after{
-    content: "";
-    padding-bottom: $unit;
-    width: #{$unit * 5};
-    border-bottom: #{$unit * .5} solid $color-black;
-    @include media($tablet){
-      width: #{$unit * 3.5};
-      border-width: #{$unit * .4};
+  &.h1--accent{
+    &:after{
+      content: "";
+      padding-bottom: $unit;
+      width: #{$unit * 5};
+      border-bottom: #{$unit * .5} solid $color-black;
+      @include media($tablet){
+        width: #{$unit * 3.5};
+        border-width: #{$unit * .4};
+      }
     }
   }
 }
 h2{
   font-family: $font-family-bold;
-  font-size: 28px;
+  font-size: 38px;
   @include media($tablet){
-    font-size: 24px;
+    font-size: 32px;
   }
 }
 h3{
   font-family: $font-family-bold;
-  font-size: 24px;
+  font-size: 28px;
   @include media($tablet){
-    font-size: 18px;
+    font-size: 22px;
   }
 }

@@ -7,13 +7,13 @@ function Contact() {
 		<div className="contact">
 			<Container>
 				<Section>
-					<h3>Get in touch title</h3>
-					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut.</p>
+					<h3>Get in touch</h3>
+					<p className="m--bottom-large">Feel free to reach out if you're looking for a developer, have a question, or just want to connect.</p>
 					<Button 
-						href="mailto:stephenbryson1@gmail.com"
-						className="button--primary"
-						label="Get in touch via email"
-						icon="envelope"
+						href="mailto:stephen.bryson1@gmail.com"
+						className="button--link"
+						label="stephen.bryson1@gmail.com"
+						icon="arrow-right"
 					/>
 				</Section>
 			</Container>

@@ -13,9 +13,18 @@ $color-black-20: rgba(0,0,0,0.2);
 $color-black-40: rgba(0,0,0,0.4);
 $color-black-60: rgba(0,0,0,0.6);
 $color-black-80: rgba(0,0,0,0.8);
-$color-success: #31B17B;
-$color-neutral: #EFBE3A;
-$color-negative: #E85858;
+$color-green: rgb(0, 102, 68);
+$color-green-alt: rgb(227, 252, 239);
+$color-blue: rgb(7, 71, 166);
+$color-blue-alt: rgb(222, 235, 255);
+$color-teal: rgb(0, 141, 166);
+$color-teal-alt: rgb(230, 252, 255);
+$color-orange: rgb(191, 38, 0);
+$color-orange-alt: rgb(255, 235, 230);
+$color-yellow: rgb(255, 139, 0);
+$color-yellow-alt: rgb(255, 250, 230);
+$color-purple: rgb(64, 50, 148);
+$color-purple-alt: rgb(234, 230, 255);
 
 // Fonts
 $font-family-book: 'circular-book';
@@ -29,4 +38,4 @@ $tablet: 768px;
 $tablet-landscape: 1024px;
 
 // Other
-$radius: #{$unit * .4};
+$radius: #{$unit * .2};

@@ -1,32 +1,70 @@
-import React from "react";
+import React, { Component } from "react";
 import { Hero, Container, Section, Project, Contact } from "../components";
+import HeroImage from "../assets/img/hero.jpeg";
+import StoryblokClient from "storyblok-js-client";
 
-function Home() {
-	return (
+const Storyblok = new StoryblokClient({
+	accessToken: "fBBlGUH5Sfj3r2HuM3XXpAtt",
+	cache: {
+		clear: "auto",
+		type: "memory"
+	}
+});
+
+class Home extends Component {
+	state = { projects: [] };
+
+	componentDidMount() {
+		this.getProjectsFromStoryblok();
+	}
+
+	getProjectsFromStoryblok = () => {
+		Storyblok.get("cdn/stories", {
+			starts_with: "projects/"
+		})
+			.then(projectsResponse => {
+				this.handleReportData(projectsResponse);
+			})
+			.catch(error => {
+				if (error.projectsResponse && error.projectsResponse.status === 404) {
+					this.getProjectsFromStoryblok();
+				} else console.error(error);
+			});
+	};
+
+	handleReportData = projectsResponse => {
+		const { stories } = projectsResponse.data;
+		if (stories) {
+			const projects = stories;
+			this.setState({
+				projects
+			});
+		}
+	};
+	render = () => (
 		<>
-			<Hero 
-				title="Hero title"
-				desc="Welcome to my site..."
+			<Hero
+				title="Hi, I'm Stephen. Front End Developer &amp; Designer"
+				img={HeroImage}
 			/>
 			<Container>
 				<Section>
-					<h3>Projects</h3>
-					<div className="g--grid">
-						<div className="g--grid__col">
-							<Project
-								image="https://via.placeholder.com/440x220/F7F7F7?text=stephenbryson.com"
-								title="Hult edu"
-								desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-							/>
+					<h3>Latest projects</h3>
+					{this.state.projects.length > 0 && (
+						<div className="g--grid">
+							{this.state.projects.map(project => (
+								<div key={project.id} className="g--grid__col">
+									<Project
+										url={project.full_slug}
+										image={project.content.image}
+										title={project.name}
+										desc={project.content.description}
+										tags={project.tag_list}
+									/>
+								</div>
+							))}
 						</div>
-						<div className="g--grid__col">
-							<Project
-								image="https://via.placeholder.com/440x220/F7F7F7?text=stephenbryson.com"
-								title="Career Mapper"
-								desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-							/>
-						</div>
-					</div>
+					)}
 				</Section>
 			</Container>
 			<Contact />

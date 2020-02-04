@@ -6,7 +6,19 @@
 		width: 100%;
   }
   &__title{
-    margin: #{$unit} 0;
+    margin: #{$unit} 0 #{$unit * .5};
     color: $color-primary;
+  }
+  &__tags{
+    @include flex;
+    @include flex-align-items(center);
+    margin: -#{$unit * .25};
+
+    & &-item{
+      margin: #{$unit * .25};
+    }
+  } 
+  &__desc{
+    margin: #{$unit} 0 0;
   }
 }

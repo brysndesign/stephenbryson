@@ -6,26 +6,66 @@
   &--none{
     margin: 0;
   }
+  &--top{
+    &-large{
+      margin-top: #{$unit * 4};
+    }
+    &-medium{
+      margin-top: #{$unit * 2};
+    }
+    &-small{
+      margin-top: #{$unit};
+    }
+  }
+  &--bottom{
+    &-large{
+      margin-bottom: #{$unit * 4};
+    }
+    &-medium{
+      margin-bottom: #{$unit * 2};
+    }
+    &-small{
+      margin-bottom: #{$unit};
+    }
+  }
 }
 
 // Font sizes
 .f{
   &--xxlarge{
-    font-size: 26px;
+    font-size: 28px;
     @include media($tablet){
-      font-size: 22px;
+      font-size: 24px;
     }
   }
   &--xlarge{
-    font-size: 22px;
+    font-size: 24px;
+    @include media($tablet){
+      font-size: 20px;
+    }
+  }
+  &--large{
+    font-size: 20px;
     @include media($tablet){
       font-size: 18px;
     }
   }
-  &--large{
-    font-size: 18px;
+  &--small{
+    font-size: 16px;
     @include media($tablet){
-      font-size: 16px;
+      font-size: 14px;
+    }
+  }
+  &--xsmall{
+    font-size: 14px;
+    @include media($tablet){
+      font-size: 12px;
+    }
+  }
+  &--xxsmall{
+    font-size: 12px;
+    @include media($tablet){
+      font-size: 10px;
     }
   }
 }

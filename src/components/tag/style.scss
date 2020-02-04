@@ -1,0 +1,31 @@
+@import '../../assets/scss/mixin';
+@import '../../assets/scss/variable';
+
+.tag{
+  $this: '.tag';
+  background: $color-black-10;
+  color: $color-primary;
+  padding: #{$unit * .25} #{$unit * .5};
+  border-radius: $radius;
+  margin: 0;
+  text-transform: uppercase;
+  cursor: pointer;
+  
+  // Variants
+  &--ui{
+    color: $color-green;
+    background: $color-green-alt;
+  }
+  &--ux{
+    color: $color-blue;
+    background: $color-blue-alt;
+  }
+  &--react{
+    color: $color-teal;
+    background: $color-teal-alt;
+  }
+  &--scss{
+    color: $color-orange;
+    background: $color-orange-alt;
+  }
+}

@@ -8,3 +8,4 @@ export { default as Icon } from "./icon";
 export { default as Project } from "./project"; 
 export { default as Section } from "./section"; 
 export { default as ScrollToTop } from "./scroll-top"; 
+export { default as Tag } from "./tag"; 
