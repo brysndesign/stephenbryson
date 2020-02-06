@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Hero } from "../components";
+import { Hero, Image, Container } from "../components";
 import StoryblokClient from "storyblok-js-client";
 
 const Storyblok = new StoryblokClient({
@@ -38,12 +38,13 @@ class Page extends Component {
 			this.setState({
 				pages
 			});
+			console.log(pages[1].content.gallery[0].image)
 		}
 	};
 
 	render() {
-    const pagePath = window.location.pathname.replace(/^\/|\/$/g, '')
-    
+		const pagePath = window.location.pathname.replace(/^\/|\/$/g, '')
+		
 		return (
 			<>
 				{this.state.pages.length > 0 && (
@@ -57,7 +58,20 @@ class Page extends Component {
                       title={page.name}
                       desc={page.content.description}
                     />
-
+										<Container>
+											{page.content.gallery && (
+												<>
+													<h3>Gallery</h3>
+													<div className="g--grid">
+														{page.content.gallery.map(image => (
+															<div key={image._uid} className="g--grid__col g--grid__col--6">
+																<Image img={image.image} />
+															</div>
+														))}
+													</div>
+												</>
+											)}
+										</Container>
                   </>
 								)}
 							</div>

@@ -1,25 +1,23 @@
-@import '../../assets/scss/variable';
-@import '../../assets/scss/mixin';
+@import "../../assets/scss/variable";
+@import "../../assets/scss/mixin";
 
-.g{
-  &--grid{
-    @include flex;
-    @include flex-wrap(wrap);
-    margin: -#{$unit * 2};
-    @include media($tablet-landscape){
-      margin: -#{$unit};
-    }
+$wide-1: 8.33%;
+$wide-2: 16.66%;
+$wide-3: 24.99%;
+$wide-4: 33.32%;
+$wide-5: 41.65%;
+$wide-6: 49.98%;
+$wide-7: 58.31%;
+$wide-8: 66.64%;
+$wide-9: 74.97%;
+$wide-10: 83.3%;
+$wide-11: 91.63%;
+$wide-12: 100%;
 
-    &__col{
-      width: calc(50% - #{$unit * 4});
-      margin: #{$unit * 2};
-      @include media($tablet-landscape){
-        margin: $unit;
-        width: calc(50% - #{$unit * 2});
-      }
-      @include media($tablet){
-        width: calc(100% - #{$unit * 2});
-      }
-    }
-  }
+.g {
+	&--grid {
+		$this: ".g--grid";
+		@include flex;
+		@include flex-wrap(wrap);
+	}
 }

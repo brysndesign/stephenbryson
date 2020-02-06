@@ -49,14 +49,15 @@ class Home extends Component {
 			/>
 			<Container>
 				<Section>
-					<h3>Latest projects</h3>
 					{this.state.projects.length > 0 && (
-						<div className="g--grid">
+						<>
+						<h3>Latest projects</h3>
+						<div className="g--grid g--grid--gutters-small">
 							{this.state.projects.map(project => (
-								<div key={project.id} className="g--grid__col">
+								<div key={project.id} className="g--grid__col g--grid__col--6 g--grid__col--tablet-3">
 									<Project
 										url={project.full_slug}
-										image={project.content.image}
+										image={project.content.thumbnail}
 										title={project.name}
 										desc={project.content.description}
 										tags={project.tag_list}
@@ -64,6 +65,7 @@ class Home extends Component {
 								</div>
 							))}
 						</div>
+						</>
 					)}
 				</Section>
 			</Container>

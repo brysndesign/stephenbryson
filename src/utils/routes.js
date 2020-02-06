@@ -3,12 +3,12 @@ import Page from '../pages/page'
 
 const routes = [
   {
-    path: "/",
+    path: process.env.PUBLIC_URL + '/',
     exact: true,
     component: Home
   },
   {
-    path: "/projects",
+    path: process.env.PUBLIC_URL + '/projects',
     component: Page
   },
 ];
